@@ -2,7 +2,7 @@
 IF EXIST "%SystemDrive%\Chocolatey" (
 	CALL cver | find "-azure"
 	IF ERRORLEVEL 1 (
-		ECHO You have a non-Azure version of Chocolatey installed. As of 0.9.8.23  it is unable to authenticate to internal sources. You should uninstall Chocolatey and re-run this batch file.
+		ECHO You have a non-Azure version of Chocolatey installed. As of 0.9.8.23  it is unable to authenticate to internal sources. You should uninstall Chocolatey and re-run this batch file to install the Azure version.
 		EXIT /B 1
 	)
 )
