@@ -9,7 +9,7 @@ param(
   $packages = $packageName
   if ($packageName -eq 'all') {
     $packageFolders = Get-ChildItem $nugetLibPath | sort name
-    $packages = $packageFolders -replace "(\.\d{1,})+(-.*)?"|gu 
+    $packages = $packageFolders -replace "(\.\d{1,})+(-.+)?"|gu 
   }
 
   foreach ($package in $packages) {
