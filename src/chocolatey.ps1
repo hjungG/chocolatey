@@ -43,7 +43,7 @@ $currentThread.CurrentCulture = $culture;
 $currentThread.CurrentUICulture = $culture;
 
 #Let's get Chocolatey!
-$chocVer = '0.9.8.24-alpha2'
+$chocVer = '0.9.8.23-nuget28hf4'
 $nugetChocolateyPath = (Split-Path -parent $MyInvocation.MyCommand.Definition)
 $nugetPath = (Split-Path -Parent $nugetChocolateyPath)
 $nugetExePath = Join-Path $nuGetPath 'bin'
@@ -53,7 +53,12 @@ $extensionsPath = Join-Path $nugetPath 'extensions'
 $chocInstallVariableName = "ChocolateyInstall"
 $nugetExe = Join-Path $nugetChocolateyPath 'nuget.exe'
 $7zip = Join-Path $nugetChocolateyPath 'tools\7za.exe'
-$ShimGen = Join-Path $nugetChocolateyPath 'tools\shimgen.exe'
+$UseShimGen = $false
+if ($UseShimGen) {
+  $ShimGen = Join-Path $nugetChocolateyPath 'tools\shimgen.exe'
+} else {
+  $ShimGen = Join-Path $nugetChocolateyPath 'tools\noshimgen.exe'
+}
 $checksumExe = Join-Path $nugetChocolateyPath 'tools\checksum.exe'
 $h1 = '====================================================='
 $h2 = '-------------------------'
