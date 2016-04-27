@@ -15,7 +15,7 @@
   [string] $name,
   [switch] $ignoreDependencies = $false,
   [alias("x86")][switch] $forceX86 = $false,
-  [alias("params")][alias("parameters")][alias("pkgParams")][string]$packageParameters = '',
+  [alias("params","parameters","pkgParams")][string]$packageParameters = '',
   [parameter(Position=1, ValueFromRemainingArguments=$true)]
   [string[]]$packageNames=@('')
 )
@@ -43,7 +43,7 @@ $currentThread.CurrentCulture = $culture;
 $currentThread.CurrentUICulture = $culture;
 
 #Let's get Chocolatey!
-$chocVer = '0.9.8.23-nuget28hf4'
+$chocVer = '0.9.8.23-nuget28hf4-ps'
 $nugetChocolateyPath = (Split-Path -parent $MyInvocation.MyCommand.Definition)
 $nugetPath = (Split-Path -Parent $nugetChocolateyPath)
 $nugetExePath = Join-Path $nuGetPath 'bin'
